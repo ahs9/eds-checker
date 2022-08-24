@@ -1,0 +1,11 @@
+{
+    "name": "ahs9/eds-checker",
+    "require": {
+        "fgrosse/phpasn1": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ahs9\\EdsChecker\\": "src/"
+        }
+    }
+}
