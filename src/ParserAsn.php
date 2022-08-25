@@ -54,6 +54,22 @@ class ParserAsn
     }
 
     /**
+     * Returns ASN object for template-debugging.
+     * 
+     * @return mixed
+     */
+    public function getSplitedAsn()
+    {
+        $this->setAsn();
+        $this->splitedAsn = $this->asn;
+        $this->splitedTemplate = $this->pathTemplate;
+
+        $this->splitAsnByTemplate();
+
+        return $this->splitedAsn;
+    }
+
+    /**
      * @return void
      * @throws Exception
      */
