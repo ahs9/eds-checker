@@ -6,6 +6,7 @@ abstract class CertificateItem
 {
     const OID_INN = '1.2.643.3.131.1.1';
     const OID_SURNAME = '2.5.4.4';
+    const OID_COMMON_NAME = '2.5.4.3';
 
     protected $value;
 
@@ -17,6 +18,7 @@ abstract class CertificateItem
         return [
             self::OID_INN => Inn::class,
             self::OID_SURNAME => Surname::class,
+            self::OID_COMMON_NAME => CommonName::class,
         ];
     }
 
