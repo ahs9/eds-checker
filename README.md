@@ -71,7 +71,7 @@ $template = [
 ];
 var_dump($parser->getSplitedAsn());
 ```
-deeply and deeply until you get user-data
+deeper and deeper until you get user-data
 
 ### Getting parse-result
 
