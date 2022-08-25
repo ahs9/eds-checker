@@ -101,7 +101,7 @@ class ParserAsn
         $value = $data[1]->getContent();
 
         if ($this->result->getItemByOid($key)->getValue() !== null)
-            throw new Exception('OID is not unique in certificate.');
+            throw new Exception('OID ' . $key . ' is not unique in certificate.');
 
         if (is_array($value)) {
             $this->result->setValueByOid($key, $this->parseArray($value));
