@@ -8,6 +8,10 @@ use FG\ASN1\Universal\Sequence;
 
 class ParserAsn
 {
+    const TEMPLATE_RESULT = 'result';
+    const TEMPLATE_SEQUENCE = 'sequence';
+    const TEMPLATE_ARRAY = 'array';
+
     protected $pathTemplate;
     protected $certificate;
     protected $asn;
@@ -144,15 +148,15 @@ class ParserAsn
 
         foreach ($this->splitedTemplate as $k => $v) {
             $this->splitedTemplate = $v;
-            if ($v === 'result') {
+            if ($v === self::TEMPLATE_RESULT) {
                 $this->splitedAsn = $this->splitedAsn->getContent();
             }
-            elseif ($k === 'sequence') {
+            elseif ($k === self::TEMPLATE_SEQUENCE) {
                 $this->splitedAsn = $this->splitedAsn->getContent();
                 $this->splitAsnByTemplate();
 
             }
-            elseif ($k === 'array') {
+            elseif ($k === self::TEMPLATE_ARRAY) {
                 $this->splitArray();
                 $this->splitAsnByTemplate();
             }
