@@ -25,6 +25,6 @@ class GivenName extends CertificateItem
      */
     public static function getLabel()
     {
-        return 'GivenName';
+        return 'Given name';
     }
 }

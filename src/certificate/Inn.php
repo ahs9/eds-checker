@@ -25,6 +25,6 @@ class Inn extends CertificateItem
      */
     public static function getLabel()
     {
-        return 'ITN';
+        return 'INN';
     }
 }
