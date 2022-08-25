@@ -8,6 +8,7 @@ abstract class CertificateItem
     const OID_SURNAME = '2.5.4.4';
     const OID_COMMON_NAME = '2.5.4.3';
     const OID_GIVEN_NAME = '2.5.4.42';
+    const OID_ORGANIZATION_NAME = '2.5.4.10';
 
     protected $value;
 
@@ -21,6 +22,7 @@ abstract class CertificateItem
             self::OID_SURNAME => Surname::class,
             self::OID_COMMON_NAME => CommonName::class,
             self::OID_GIVEN_NAME => GivenName::class,
+            self::OID_ORGANIZATION_NAME => OrganizationName::class,
         ];
     }
 
