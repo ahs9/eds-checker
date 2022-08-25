@@ -25,6 +25,6 @@ class Surname extends CertificateItem
      */
     public static function getLabel()
     {
-        return 'Фамилия';
+        return 'Surname';
     }
 }

@@ -25,6 +25,6 @@ class CommonName extends CertificateItem
      */
     public static function getLabel()
     {
-        return 'Наименование';
+        return 'CommonName';
     }
 }
