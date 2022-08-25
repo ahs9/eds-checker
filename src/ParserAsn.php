@@ -2,6 +2,7 @@
 
 namespace Ahs9\EdsChecker;
 
+use Exception;
 use FG\ASN1\ASNObject;
 use FG\ASN1\Universal\ObjectIdentifier;
 use FG\ASN1\Universal\Sequence;
@@ -38,6 +39,7 @@ class ParserAsn
     /**
      * @return ComparedData
      * @throws \FG\ASN1\Exception\ParserException
+     * @throws Exception
      */
     public function getComparedData()
     {
@@ -53,6 +55,7 @@ class ParserAsn
 
     /**
      * @return void
+     * @throws Exception
      */
     protected function parseByOidKeys()
     {
@@ -62,6 +65,7 @@ class ParserAsn
     /**
      * @param $data
      * @return void
+     * @throws Exception
      */
     protected function parseAsn($data)
     {
@@ -89,11 +93,15 @@ class ParserAsn
     /**
      * @param array $data
      * @return void
+     * @throws Exception
      */
     protected function addToResult(array $data)
     {
         $key = $data[0]->getContent();
         $value = $data[1]->getContent();
+
+        if ($this->result->getItemByOid()->getValue() !== null)
+            throw new Exception('OID is not unique in certificate.');
 
         if (is_array($value)) {
             $this->result->setValueByOid($key, $this->parseArray($value));
