@@ -39,11 +39,15 @@ $template = [
 ### Creating parser-object
 
 ```php
-$parser = new ParserAsn(base64_encode($content), [
+$parser = new ParserAsn(
+    $signature, // base64 encoded binary certificate 
+    [
         CertificateItem::OID_INN,
         CertificateItem::OID_SURNAME,
         CertificateItem::OID_GIVEN_NAME,
-    ], $template);
+    ],
+     $template
+ );
 ```
 
 ### Debugging template
