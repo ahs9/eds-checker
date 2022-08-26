@@ -50,8 +50,8 @@ class Checker
             $certificateItem = $this->certificateData->getItemByOid($oid);
             $userItem = $this->userData->getItemByOid($oid);
 
-            $certificateValue = $certificateItem !== null ? $certificateItem->getValue() : null;
-            $userValue = $userItem !== null ? $userItem->getValue() : null;
+            $certificateValue = $certificateItem !== null ? $certificateItem->getFormatValue() : null;
+            $userValue = $userItem !== null ? $userItem->getFormatValue() : null;
 
             if (null === $userValue) {
                 $this->addError(
